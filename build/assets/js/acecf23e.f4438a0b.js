@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_bolivia_api=self.webpackChunkdocs_bolivia_api||[]).push([[1903],{1912:a=>{a.exports=JSON.parse('{"blogBasePath":"/docs-bolivia-api/blog","blogTitle":"Blog","authorsListPath":"/docs-bolivia-api/blog/authors"}')}}]);

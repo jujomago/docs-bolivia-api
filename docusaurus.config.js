@@ -10,13 +10,13 @@ import { themes as prismThemes } from "prism-react-renderer";
 const config = {
   title: "My Site",
   tagline: "Dinosaurs are cool",
-  url: "https://your-docusaurus-test-site.com",
+  url: "https://jujomago.github.io",
   baseUrl: "/docs-bolivia-api/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
-  organizationName: "facebook", // Usually your GitHub org/user name.
-  projectName: "docusaurus", // Usually your repo name.
+  organizationName: "jujomago", // Usually your GitHub org/user name.
+  projectName: "docs-bolivia-api", // Usually your repo name.
   presets: [
     [
       "docusaurus-preset-openapi",
