@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_bolivia_api=self.webpackChunkdocs_bolivia_api||[]).push([[1625],{54248:a=>{a.exports=JSON.parse('{"name":"docusaurus-plugin-openapi","id":"default"}')}}]);

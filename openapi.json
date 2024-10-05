@@ -1,0 +1,799 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Bolivia Places API Documentation",
+    "license": {
+      "name": "MIT"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://bolivia-places-api.onrender.com/api/v1"
+    }
+  ],
+  "paths": {
+    "/places": {
+      "get": {
+        "summary": "GET all places",
+        "operationId": "getAllPlaces",
+        "tags": ["Places"],
+        "parameters": [
+          { "$ref": "#/components/parameters/FromQuery" },
+          { "$ref": "#/components/parameters/RowsQuery" }
+        ],
+        "responses": {
+          "200": {
+            "description": "A paged array of places",
+            "headers": {
+              "x-next": {
+                "description": "A link to the next page of responses",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Places"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/places/{placeId}": {
+      "get": {
+        "summary": "GET a place",
+        "operationId": "getPlaceById",
+        "tags": ["Places"],
+        "parameters": [
+          {
+            "name": "placeId",
+            "in": "path",
+            "required": true,
+            "description": "The id of the place to retrieve",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "An onject for the specific place",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Place"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found category",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "/places/tag/{tagSearch}": {
+      "get": {
+        "summary": "GET places by Tag",
+        "operationId": "getPlaceByTag",
+        "tags": ["Places"],
+        "parameters": [
+          { "$ref": "#/components/parameters/FromQuery" },
+          { "$ref": "#/components/parameters/RowsQuery" },
+          {
+            "name": "tagSearch",
+            "in": "path",
+            "required": true,
+            "description": "The id or name of the tag to search in places",
+            "schema": {
+              "oneOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A paged array for the places that match with the Tag",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Places"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found category",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "/places/category/{categorySearch}": {
+      "get": {
+        "summary": "GET places by Category",
+        "operationId": "getPlacesByCategory",
+        "tags": ["Places"],
+        "parameters": [
+          { "$ref": "#/components/parameters/FromQuery" },
+          { "$ref": "#/components/parameters/RowsQuery" },
+          {
+            "name": "categorySearch",
+            "in": "path",
+            "required": true,
+            "description": "The id or name of the Category to search in places",
+            "schema": {
+              "oneOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A paged array for the places that match with the Category",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Places"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "/places/city/{citySearch}": {
+      "get": {
+        "summary": "GET places by City",
+        "operationId": "getPlacesByCity",
+        "tags": ["Places"],
+        "parameters": [
+          { "$ref": "#/components/parameters/FromQuery" },
+          { "$ref": "#/components/parameters/RowsQuery" },
+          {
+            "name": "citySearch",
+            "in": "path",
+            "required": true,
+            "description": "The id or name of the City to search in places",
+            "schema": {
+              "oneOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A paged array for the places that match with the City",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Places"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "/places/search/{searchStr}": {
+      "get": {
+        "summary": "GET places by Search",
+        "operationId": "getPlacesBySearch",
+        "tags": ["Places"],
+        "parameters": [
+          {
+            "name": "searchStr",
+            "in": "path",
+            "required": true,
+            "description": "The string to search on places",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "An array for the places found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Places"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "/places/nearest/{lat}&{lon}&{radio}": {
+      "get": {
+        "summary": "Get nearest places",
+        "operationId": "getNearestPlaces",
+        "tags": ["Places"],
+        "parameters": [
+          {
+            "name": "lat",
+            "in": "path",
+            "required": true,
+            "description": "Latitude of the location to search for nearest places",
+            "schema": {
+              "type": "number",
+              "format": "float"
+            }
+          },
+          {
+            "name": "lon",
+            "in": "path",
+            "required": true,
+            "description": "Longitude of the location to search for nearest places",
+            "schema": {
+              "type": "number",
+              "format": "float"
+            }
+          },
+          {
+            "name": "radio",
+            "in": "path",
+            "required": true,
+            "description": "Radius in kilometers to search for nearest places",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of nearest places",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Places"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "/categories": {
+      "get": {
+        "summary": "GET all categories",
+        "operationId": "getAllCategories",
+        "tags": ["Categories"],
+        "responses": {
+          "200": {
+            "description": "An array of categories",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Categories"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/categories/{categoryId}": {
+      "get": {
+        "summary": "GET a category",
+        "operationId": "getCategoryById",
+        "tags": ["Categories"],
+        "parameters": [
+          {
+            "name": "categoryId",
+            "in": "path",
+            "required": true,
+            "description": "The id of the category to retrieve",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "An object for the specific category",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Category"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found category",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "/tags": {
+      "get": {
+        "summary": "GET all tags",
+        "operationId": "getAllTags",
+        "tags": ["Tags"],
+        "responses": {
+          "200": {
+            "description": "An array of tags",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Tags"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tags/{tagId}": {
+      "get": {
+        "summary": "GET a tag",
+        "operationId": "getTabById",
+        "tags": ["Tags"],
+        "parameters": [
+          {
+            "name": "tagId",
+            "in": "path",
+            "required": true,
+            "description": "The id of the tag to retrieve",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "An object for the specific tag",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Tag"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found tag",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "/cities": {
+      "get": {
+        "summary": "GET all cities",
+        "operationId": "getAllCities",
+        "tags": ["Cities"],
+        "responses": {
+          "200": {
+            "description": "An array of cities",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cities"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/cities/{cityId}": {
+      "get": {
+        "summary": "GET a city",
+        "operationId": "getCityById",
+        "tags": ["Cities"],
+        "parameters": [
+          {
+            "name": "cityId",
+            "in": "path",
+            "required": true,
+            "description": "The id of the city to retrieve",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "An object for the specific city",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/City"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found tag",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "parameters": {
+      "FromQuery": {
+        "name": "from",
+        "in": "query",
+        "description": "Start index of the list items",
+        "required": false,
+        "schema": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "RowsQuery": {
+        "name": "rows",
+        "in": "query",
+        "description": "How many items to return at one time, by default is 30",
+        "required": false,
+        "schema": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+
+    "schemas": {
+      "Place": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "description",
+          "description_html",
+          "default_photo",
+          "latitude",
+          "longitude",
+          "location",
+          "category_name",
+          "category_id",
+          "city_name",
+          "city_id"
+        ],
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "description_html": {
+            "type": "string"
+          },
+          "default_photo": {
+            "type": "string",
+            "format": "uri"
+          },
+          "latitude": {
+            "type": "number",
+            "format": "float"
+          },
+          "longitude": {
+            "type": "number",
+            "format": "float"
+          },
+          "location": {
+            "type": "string"
+          },
+          "category_name": {
+            "type": "string"
+          },
+          "category_id": {
+            "type": "integer"
+          },
+          "city_name": {
+            "type": "string"
+          },
+          "city_id": {
+            "type": "integer"
+          },
+          "media": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Media"
+            }
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Tag"
+            }
+          }
+        }
+      },
+      "Places": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Place"
+        }
+      },
+      "Categories": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Category"
+        }
+      },
+      "Tags": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Tag"
+        }
+      },
+      "Cities": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/City"
+        }
+      },
+      "Media": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "A valid URL pointing to media content"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["video", "foto"]
+          }
+        },
+        "required": ["id", "url", "type"]
+      },
+      "Tag": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": ["id", "name"]
+      },
+
+      "Category": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": ["id", "name"]
+      },
+
+      "City": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": ["id", "name"]
+      },
+
+      "Error": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "A description of the error"
+          }
+        },
+        "required": ["error"]
+      }
+    }
+  }
+}

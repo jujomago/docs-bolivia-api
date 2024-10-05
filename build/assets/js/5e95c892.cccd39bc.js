@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_bolivia_api=self.webpackChunkdocs_bolivia_api||[]).push([[9647],{7121:(e,s,a)=>{a.r(s),a.d(s,{default:()=>d});a(96540);var r=a(18215),c=a(61213),i=a(17559),u=a(22831),l=a(10781),o=a(74848);function d(e){return(0,o.jsx)(c.e3,{className:(0,r.A)(i.G.wrapper.docsPages),children:(0,o.jsx)(l.A,{children:(0,u.v)(e.route.routes)})})}}}]);
