@@ -47,28 +47,22 @@ const config = {
       navbar: {
         title: "Bolivia API",
         logo: {
-          alt: "My Site Logo",
-          src: "img/logo.svg",
+          alt: "Bolivia Rest API",
+          src: "img/logo.png",
         },
         items: [
-          {
-            type: "doc",
-            docId: "intro",
-            position: "right",
-            label: "Tutorial",
-          },
           { to: "/api", label: "API", position: "left" },
-          { to: "/blog", label: "Blog", position: "left" },
+          { to: "/blog", label: "Changelog", position: "left" },
           {
-            href: "https://github.com/jujomago",
-            label: "My GitHub",
             position: "right",
+            label: "About",
+            to: "/about",
           },
         ],
       },
       footer: {
         style: "dark",
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} ,made with :love by @jujomago.`,
       },
       prism: {
         theme: prismThemes.github,
