@@ -11,7 +11,7 @@ const config = {
   title: "Bolivia Places API",
   tagline: "The best API for turistic places in Boliva",
   url: "https://jujomago.github.io",
-  baseUrl: "/docs-bolivia-api/",
+  baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
