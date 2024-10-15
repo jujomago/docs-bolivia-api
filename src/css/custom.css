@@ -28,115 +28,111 @@ html[data-theme="dark"] .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
-
 .navbar__logo {
   height: 5rem;
 }
 .navbar__item {
-    /* background: #c0e978; */
-    height: 100%;
-    display: flex;
-    align-items: center;
-    padding: 15px;
-    &:last-child{
-      border: 0;
-    }
+  /* background: #c0e978; */
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  &:last-child {
+    border: 0;
+  }
 }
 
-.resultado_grid{
+/* .jv-indent .json-view--pair:nth-child(odd){
+  background: red;
+} */
+
+.resultado_grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 2fr;
   align-items: flex-start;
   gap: 20px;
 }
+.codeSection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 
-.searchBox{
+.searchBox {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow:0px 0px 10px #565555f5;
+  box-shadow: 0px 0px 10px #565555f5;
   padding: 0 8px 0 15px;
   margin: 0 auto;
   background: #486c5c;
   border-radius: 6px;
   height: 40px;
   gap: 20px;
-  >div{
-   
-  }
-  input{
-    width: 80px;
-    /* line-height: 38px; */
-    border: 0;
-    padding: 0 10px;
-    height: 100%;
-    text-align: center;
+}
+.searchBox input {
+  width: 80px;
+  /* line-height: 38px; */
+  border: 0;
+  padding: 0 10px;
+  height: 100%;
+  text-align: center;
+}
+.searchBox button {
+  /* line-height: 38px; */
+  border: 0;
+  padding: 0 14px;
+  background: none;
+  color: orange;
+  /* margin-left: auto; */
+  /* justify-self: flex-end; */
+}
 
-  }
-  button{
-        /* line-height: 38px; */
-        border: 0;
-        padding: 0 14px;
-        background: none;
-         color: orange; 
-        /* margin-left: auto; */
-        /* justify-self: flex-end; */
+.cardPlace {
+  background: white;
+  color: black;
+  padding: 14px 24px;
+  border-radius: 10px;
+  overflow: auto;
+  max-height: 630px;
+}
+.cardPlace img {
+  width: 80%;
+}
 
+.cardPlaceh2 {
+  margin-bottom: 28px;
+  margin-top: 6px;
+  &:first-letter {
+    text-transform: uppercase;
   }
 }
-.codeSection{
+.cardPlace .description {
+  text-align: justify;
+  clear: left;
+}
+.cardPlace .info {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-/* .jv-indent .json-view--pair:nth-child(odd){
-  background: red;
-} */
 
-.cardPlace{
-    background: white;
-    color: black;
-    padding:  14px 24px;
-    border-radius: 10px;
-    overflow: auto;    
-    max-height: 630px;
-    img{
-      width: 80%;      
-    }
-    h2{
-      margin-bottom: 28px;
-      margin-top: 6px;      
-      &:first-letter {
-        text-transform: uppercase;
-    }
-    }
-    .description{
-      text-align: justify;
-      clear: left;
-    }
-    .info{
-      display: flex;
-      
-      justify-content: space-between;
-      flex-direction: column;
-      text-align: left;
-    }
-    .tags{
-      
-      text-align: left;
-    }
-    .location{
-      display: block;
-      margin-top: 10px;
-      text-align: center; 
-    }
-    .locationDir{
-      clear: left;
-      text-align: justify;
-    }
-    b,h2{
-      color: #8f4f91;
-    }
+  justify-content: space-between;
+  flex-direction: column;
+  text-align: left;
+}
+.cardPlace .tags {
+  text-align: left;
+}
+.cardPlace .location {
+  display: block;
+  margin-top: 10px;
+  text-align: center;
+}
+.cardPlace .locationDir {
+  clear: left;
+  text-align: justify;
+}
+.cardPlace b,
+.cardPlace h2 {
+  color: #8f4f91;
 }
 
 .image-viewer {
@@ -189,10 +185,10 @@ html[data-theme="dark"] .docusaurus-highlight-code-line {
   object-fit: cover;
 }
 
-.code{
+.code {
   max-height: 570px;
   overflow: auto;
-  >.json-view{
+  > .json-view {
     padding: 10px 15px;
   }
 }

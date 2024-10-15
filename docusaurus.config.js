@@ -62,7 +62,7 @@ const config = {
       },
       footer: {
         style: "dark",
-        copyright: `Copyright © ${new Date().getFullYear()} ,made with :love by @jujomago.`,
+        copyright: `Copyright © ${new Date().getFullYear()} ,made with ❤️ by @jujomago.`,
       },
       prism: {
         theme: prismThemes.github,

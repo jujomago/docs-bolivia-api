@@ -8,7 +8,6 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  
 }
 
 @media screen and (max-width: 966px) {
@@ -22,7 +21,149 @@
   align-items: center;
   justify-content: center;
 }
-.resultado_grid{
+.resultado_grid {
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 1fr 2fr;
+  align-items: flex-start;
+  gap: 20px;
+}
+.codeSection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.searchBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 10px #565555f5;
+  padding: 0 8px 0 15px;
+  margin: 0 auto;
+  background: #486c5c;
+  border-radius: 6px;
+  height: 40px;
+  gap: 20px;
+}
+.searchBox input[type="text"] {
+  width: 80px;
+  /* line-height: 38px; */
+  border: 0;
+  padding: 0 10px;
+  height: 100%;
+  text-align: center;
+}
+.searchBox button {
+  /* line-height: 38px; */
+  border: 0;
+  padding: 0 14px;
+  background: none;
+  color: orange;
+  /* margin-left: auto; */
+  /* justify-self: flex-end; */
+}
+
+.cardPlace {
+  background: white;
+  color: black;
+  padding: 14px 24px;
+  border-radius: 10px;
+  overflow: auto;
+  max-height: 630px;
+}
+.cardPlace img {
+  width: 80%;
+}
+
+.cardPlaceh2 {
+  margin-bottom: 28px;
+  margin-top: 6px;
+  &:first-letter {
+    text-transform: uppercase;
+  }
+}
+.cardPlace .description {
+  text-align: justify;
+  clear: left;
+}
+.cardPlace .info {
+  display: flex;
+
+  justify-content: space-between;
+  flex-direction: column;
+  text-align: left;
+}
+.cardPlace .tags {
+  text-align: left;
+}
+.cardPlace .location {
+  display: block;
+  margin-top: 10px;
+  text-align: center;
+}
+.cardPlace .locationDir {
+  clear: left;
+  text-align: justify;
+}
+.cardPlace b,
+.cardPlace h2 {
+  color: #8f4f91;
+}
+
+.image-viewer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 340px;
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 17px;
+}
+
+.main-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border: 1px solid #818181;
+  border-radius: 7px;
+}
+
+.main-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumbnails {
+  display: flex;
+  gap: 6px;
+}
+
+.thumbnail {
+  flex: 1;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border: 1px solid #818181;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.thumbnail:hover,
+.thumbnail.selected {
+  border-color: #007bff;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.code {
+  max-height: 570px;
+  overflow: auto;
+  > .json-view {
+    padding: 10px 15px;
+  }
 }

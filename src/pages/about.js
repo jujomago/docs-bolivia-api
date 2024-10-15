@@ -2,6 +2,7 @@ import React from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import styles from "./about.module.css";
+import EmojiText from "../components/EmojiText";
 
 const About = () => {
   const { siteConfig } = useDocusaurusContext();
@@ -19,25 +20,36 @@ const About = () => {
               alt="Foto de perfil de jujomago"
             />
             <div className={styles.profileInfo}>
-              <div className={styles.jobTitle}>FullStack Web Engineer</div>
+              <div className={styles.jobTitle}>Full Stack Developer</div>
               <h1 className={styles.name}>
-                Hola, soy Josue Mancilla (@jujomago)
+                <EmojiText text="Hola, soy Josue Mancilla  :wave:" />
               </h1>
               <p className={styles.bio}>
-                Soy un apasionado desarrollador web con un fuerte interés en las
-                tecnologías del ecosistema JavaScript. Mi enfoque principal está
-                en crear experiencias web dinámicas y eficientes utilizando las
-                herramientas más modernas.
+                <EmojiText text="I'm a passionate web developer :computer: with a strong interest in JavaScript ecosystem technologies. My main focus is on creating dynamic and efficient web experiences using the most modern tools. :rocket:" />
               </p>
               <div className={styles.techSection}>
-                <h2 className={styles.techTitle}>Mis tecnologías favoritas:</h2>
+                <h2 className={styles.techTitle}>
+                  <EmojiText text="My favorite technologies :heart:" />
+                </h2>
                 <ul className={styles.techList}>
-                  <li>JavaScript (JS)</li>
-                  <li>Node.js</li>
-                  <li>Express</li>
-                  <li>React</li>
-                  <li>HTML</li>
-                  <li>CSS</li>
+                  <li>
+                    <EmojiText text="JavaScript (JS) :yellow_heart:" />
+                  </li>
+                  <li>
+                    <EmojiText text="Node.js :green_heart:" />
+                  </li>
+                  <li>
+                    <EmojiText text="Express :fast_forward:" />
+                  </li>
+                  <li>
+                    <EmojiText text="React :atom_symbol:" />
+                  </li>
+                  <li>
+                    <EmojiText text="HTML :page_facing_up:" />
+                  </li>
+                  <li>
+                    <EmojiText text="CSS :art:" />
+                  </li>
                 </ul>
               </div>
               <div className={styles.githubLink}>
@@ -47,7 +59,7 @@ const About = () => {
                   rel="noopener noreferrer"
                   className={styles.button}
                 >
-                  Visita mi GitHub
+                  <EmojiText text="Visit my GitHub" />
                 </a>
               </div>
             </div>

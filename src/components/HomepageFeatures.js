@@ -4,32 +4,32 @@ import styles from "./HomepageFeatures.module.css";
 
 const FeatureList = [
   {
-    title: "Easy to Use",
+    title: "You can use it for free",
     Svg: require("../../static/img/undraw_docusaurus_mountain.svg").default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        This API can be used freely by anyone, the images and texts of the
+        tourist places were collected from different sources.
       </>
     ),
   },
   {
-    title: "Focus on What Matters",
+    title: "Regular updates",
     Svg: require("../../static/img/undraw_docusaurus_tree.svg").default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        The data will be updated over time, if you want to add a specific place,
+        write me a message to my email
       </>
     ),
   },
   {
-    title: "Powered by React",
+    title: "Contributing",
     Svg: require("../../static/img/undraw_docusaurus_react.svg").default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        This is a big project that needs a lot of input and the code is growing
+        too, so if you want to join just contact me.
       </>
     ),
   },
