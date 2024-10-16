@@ -9,7 +9,7 @@
   },
   "servers": [
     {
-      "url": "https://bolivia-places-api.onrender.com/api/v1"
+      "url": "https://data.bolivia-api.com/api/v1"
     }
   ],
   "paths": {
