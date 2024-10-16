@@ -1,2 +1,3 @@
 export const API_URL =
-  process.env.API_URL ?? "https://bolivia-places-api.onrender.com/api/v1";
+  process.env.API_URL ?? "https://data.bolivia-api.com/api/v1";
+  
