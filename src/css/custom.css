@@ -48,7 +48,7 @@ html[data-theme="dark"] .docusaurus-highlight-code-line {
 
 .resultado_grid {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 1fr;
   align-items: flex-start;
   gap: 20px;
 }

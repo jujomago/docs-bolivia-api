@@ -17,6 +17,9 @@ const config = {
   favicon: "img/favicon.ico",
   organizationName: "jujomago", // Usually your GitHub org/user name.
   projectName: "docs-bolivia-api", // Usually your repo name.
+  customFields: {
+    API_URL: process.env.API_URL,
+  },
   presets: [
     [
       "docusaurus-preset-openapi",

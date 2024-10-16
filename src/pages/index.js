@@ -13,6 +13,9 @@ import ImageViewer from "../components/imageViewer";
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
+
+  const { API_URL } = siteConfig.customFields;
+
   const [searchVal, setSearchVal] = useState(104);
   const [jsonPlace, setJsonObject] = useState(null);
   const [images, setImages] = useState([]);

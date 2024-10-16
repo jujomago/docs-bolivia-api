@@ -17,12 +17,12 @@
   },
   "scripts": {
     "docusaurus": "docusaurus",
-    "start": " docusaurus start",
-    "build": "docusaurus build",
+    "start": "cross-env API_URL=http://localhost:1234/api/v1 docusaurus start",
+    "build": "cross-env API_URL=https://data.bolivia-api.com/api/v1 docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
-    "serve": "docusaurus serve",
+    "serve": "cross-env API_URL=https://data.bolivia-api.com/api/v1 docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids"
   },
@@ -37,5 +37,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
   }
 }
