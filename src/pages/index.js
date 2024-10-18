@@ -16,13 +16,27 @@ function HomepageHeader() {
 
   const { API_URL } = siteConfig.customFields;
 
-  const [searchVal, setSearchVal] = useState(104);
+  const [searchVal, setSearchVal] = useState(null);
   const [jsonPlace, setJsonObject] = useState(null);
   const [images, setImages] = useState([]);
+  const [initialSearch, setInitialSearch] = useState(true); // Estado para controlar la búsqueda inicial
 
   useEffect(() => {
-    searchVal && handleSearch();
+    fetch(`${API_URL}/places/ids`)
+      .then((res) => res.json())
+      .then((json) => {
+        const ids = json;
+        const randomId = ids[Math.floor(Math.random() * ids.length)];
+        setSearchVal(randomId);
+      });
   }, []);
+
+  useEffect(() => {
+    if (searchVal && initialSearch) {
+      handleSearch();
+      setInitialSearch(false); // Desactiva la búsqueda automática después de la primera vez
+    }
+  }, [searchVal, initialSearch]);
 
   const handleSearch = async () => {
     if (searchVal) {
@@ -53,7 +67,10 @@ function HomepageHeader() {
               <input
                 type="text"
                 value={searchVal}
-                onChange={(e) => setSearchVal(e.target.value)}
+                onChange={(e) => {
+                  console.log("change");
+                  setSearchVal(e.target.value);
+                }}
                 onKeyUp={(e) => {
                   if (e.key === "Enter") {
                     console.log("Enter pressed:", searchVal);
@@ -109,17 +126,22 @@ function HomepageHeader() {
                     Ver Ubicacion
                   </a>
                 )}
-                <p className="locationDir">
-                  <b>Location: </b> <br />
-                  {parse(jsonPlace.location)}
-                </p>
 
-                <p className="description">
-                  <b>Detail: </b> <br />
-                  {jsonPlace.description_html.length > 30
-                    ? parse(jsonPlace.description_html)
-                    : jsonPlace.description}
-                </p>
+                {jsonPlace.location.length > 30 && (
+                  <p className="locationDir">
+                    <b>Location: </b> <br />
+                    {parse(jsonPlace.location)}
+                  </p>
+                )}
+                {(jsonPlace.description.length > 30 ||
+                  jsonPlace.description_html.length > 30) && (
+                  <p className="description">
+                    <b>Detail: </b> <br />
+                    {jsonPlace.description_html.length > 30
+                      ? parse(jsonPlace.description_html)
+                      : jsonPlace.description}
+                  </p>
+                )}
               </div>
             )}
           </div>
