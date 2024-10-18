@@ -89,13 +89,19 @@ html[data-theme="dark"] .docusaurus-highlight-code-line {
 }
 
 .cardPlace {
-  background: white;
+  background-color: #ffffffbc;
   color: black;
   padding: 14px 24px;
   border-radius: 10px;
   overflow: auto;
+  min-height: 400px;
+  transition: all 0.5s ease;
+}
+.cardPlace--show {
+  background: white;
   max-height: 630px;
 }
+
 .cardPlace img {
   width: 80%;
 }
@@ -186,9 +192,17 @@ html[data-theme="dark"] .docusaurus-highlight-code-line {
 }
 
 .code {
-  max-height: 570px;
   overflow: auto;
+  height: 570px;
   > .json-view {
+    min-height: 100%;
     padding: 10px 15px;
+    background-color: #ffffffb8;
+    transition: all 0.5s ease;
+  }
+}
+.code--show {
+  > .json-view {
+    background: white;
   }
 }

@@ -54,6 +54,7 @@ function HomepageHeader() {
       console.log("No search value");
     }
   };
+  const CLEAN_API_URL = API_URL.replace(/^(https?:\/\/)/, "");
   return (
     <header className={clsx("hero hero--primary", styles.heroBanner)}>
       <div className="container">
@@ -63,7 +64,7 @@ function HomepageHeader() {
         <section className="resultado_grid">
           <div className="codeSection">
             <div className="searchBox">
-              <div>{API_URL}/places/</div>
+              <div>{CLEAN_API_URL}/places/</div>
               <input
                 type="text"
                 value={searchVal}
@@ -80,70 +81,70 @@ function HomepageHeader() {
               />
               <button onClick={handleSearch}>Search</button>
             </div>
-            {jsonPlace && (
-              <div className="code">
-                <JsonView
-                  src={jsonPlace}
-                  enableClipboard={false}
-                  theme="github"
-                />
-              </div>
-            )}
+            <div className={`code ${jsonPlace ? "code--show" : ""}`}>
+              <JsonView
+                src={jsonPlace ?? {}}
+                enableClipboard={false}
+                theme="github"
+              />
+            </div>
           </div>
           <div>
-            {jsonPlace && (
-              <div className="cardPlace">
-                <h2>{jsonPlace.name}</h2>
+            <div className={`cardPlace ${jsonPlace ? "cardPlace--show" : ""}`}>
+              {jsonPlace && (
+                <>
+                  <h2>{jsonPlace.name}</h2>
 
-                {Boolean(jsonPlace.media.length) && (
-                  <ImageViewer images={images} />
-                )}
-                {!Boolean(jsonPlace.media.length) && (
-                  <img src={jsonPlace.default_photo} alt={jsonPlace.name} />
-                )}
+                  {Boolean(jsonPlace.media.length) && (
+                    <ImageViewer images={images} />
+                  )}
+                  {!Boolean(jsonPlace.media.length) && (
+                    <img src={jsonPlace.default_photo} alt={jsonPlace.name} />
+                  )}
 
-                <div className="info">
-                  <p>
-                    <b>Category: </b>
-                    {jsonPlace.category_name}
+                  <div className="info">
+                    <p>
+                      <b>Category: </b>
+                      {jsonPlace.category_name}
+                    </p>
+                    <p>
+                      <b>City: </b>
+                      {jsonPlace.city_name}
+                    </p>
+                  </div>
+                  <p className="tags">
+                    <b>Tags :</b>
+                    <br />
+                    {jsonPlace.tags?.map((t) => t.name).join(" , ")}
                   </p>
-                  <p>
-                    <b>City: </b>
-                    {jsonPlace.city_name}
-                  </p>
-                </div>
-                <p className="tags">
-                  <b>Tags :</b>
-                  <br />
-                  {jsonPlace.tags?.map((t) => t.name).join(" , ")}
-                </p>
-                {jsonPlace.latitude && jsonPlace.longitude && (
-                  <a
-                    href={`https://maps.google.com/?q=${jsonPlace.latitude},${jsonPlace.longitude}`}
-                    target="_blank"
-                    className="location"
-                  >
-                    Ver Ubicacion
-                  </a>
-                )}
+                  {jsonPlace.latitude && jsonPlace.longitude && (
+                    <a
+                      href={`https://maps.google.com/?q=${jsonPlace.latitude},${jsonPlace.longitude}`}
+                      target="_blank"
+                      className="location"
+                    >
+                      Ver Ubicacion
+                    </a>
+                  )}
 
-                {jsonPlace.location.length > 30 && (
-                  <p className="locationDir">
-                    <b>Location: </b> <br />
-                    {parse(jsonPlace.location)}
-                  </p>
-                )}
-                {(jsonPlace.description.length > 30 ||
-                  jsonPlace.description_html.length > 30) && (
-                  <p className="description">
-                    <b>Detail: </b> <br />
-                    {jsonPlace.description_html.length > 30
-                      ? parse(jsonPlace.description_html)
-                      : jsonPlace.description}
-                  </p>
-                )}
-              </div>
-            )}
+                  {jsonPlace.location.length > 30 && (
+                    <p className="locationDir">
+                      <b>Location: </b> <br />
+                      {parse(jsonPlace.location)}
+                    </p>
+                  )}
+                  {(jsonPlace.description.length > 30 ||
+                    jsonPlace.description_html.length > 30) && (
+                    <p className="description">
+                      <b>Detail: </b> <br />
+                      {jsonPlace.description_html.length > 30
+                        ? parse(jsonPlace.description_html)
+                        : jsonPlace.description}
+                    </p>
+                  )}
+                </>
+              )}
+            </div>
           </div>
         </section>
       </div>
