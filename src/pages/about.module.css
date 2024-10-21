@@ -1,95 +1,101 @@
 .container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
-  }
-  
-  .card {
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-  }
-  
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+}
+
+.profileImage {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.profileInfo {
+  padding: 1.5rem;
+}
+
+.jobTitle {
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #6f337c;
+  margin-bottom: 0.5rem;
+}
+
+.name {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #6f337c;
+  margin-bottom: 1rem;
+}
+
+.bio {
+  font-size: 1rem;
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+}
+
+.techSection {
+  margin-bottom: 1.5rem;
+}
+
+.techTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.techList {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  color: #4b5563;
+}
+
+.button {
+  display: inline-block;
+  background-color: #6f337c;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #5a2c64;
+}
+
+@media (min-width: 768px) {
   .profile {
-    display: flex;
-    flex-direction: column;
+    flex-direction: row;
   }
-  
+
   .profileImage {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+    width: 200px;
+    height: auto;
   }
-  
+
   .profileInfo {
-    padding: 1.5rem;
+    flex: 1;
   }
-  
-  .jobTitle {
-    text-transform: uppercase;
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: #6f337c;
-    margin-bottom: 0.5rem;
-  }
-  
-  .name {
-    font-size: 2rem;
-    font-weight: 800;
-    color: #6f337c;
-    margin-bottom: 1rem;
-  }
-  
-  .bio {
-    font-size: 1rem;
-    color: #4b5563;
-    margin-bottom: 1.5rem;
-  }
-  
-  .techSection {
-    margin-bottom: 1.5rem;
-  }
-  
-  .techTitle {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #1f2937;
-    margin-bottom: 0.5rem;
-  }
-  
-  .techList {
-    list-style-type: disc;
-    padding-left: 1.5rem;
-    color: #4b5563;
-  }
-  
-  .button {
-    display: inline-block;
-    background-color: #6f337c;
-    color: #ffffff;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: background-color 0.3s ease;
-  }
-  
-  .button:hover {
-    background-color: #5a2c64;
-  }
-  
-  @media (min-width: 768px) {
-    .profile {
-      flex-direction: row;
-    }
-  
-    .profileImage {
-      width: 200px;
-      height: auto;
-    }
-  
-    .profileInfo {
-      flex: 1;
-    }
-  }
+}
+
+.projectLogo {
+  float: left;
+  shape-outside: circle() margin-box;
+  shape-margin: 10px;
+}

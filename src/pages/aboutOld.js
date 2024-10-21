@@ -8,8 +8,8 @@ const About = () => {
   const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
-      title={`About the Project | ${siteConfig.title}`}
-      description="Information about the Bolivia API project"
+      title={`Sobre mí | ${siteConfig.title}`}
+      description="Información sobre el desarrollador y sus intereses tecnológicos"
     >
       <div className={styles.container}>
         <div className={styles.card}>
@@ -17,37 +17,41 @@ const About = () => {
             <img
               className={styles.profileImage}
               src="https://github.com/jujomago.png"
-              alt="Profile picture of Josue Mancilla"
+              alt="Foto de perfil de jujomago"
             />
             <div className={styles.profileInfo}>
+              <div className={styles.jobTitle}>Full Stack Developer</div>
               <h1 className={styles.name}>
-                <EmojiText text="Bolivia API" />
+                <EmojiText text="Hola, soy Josue Mancilla  :wave:" />
               </h1>
               <p className={styles.bio}>
-                <EmojiText text="Bolivia API is a project that provides data about turistic places, cities, departments, and other aspects of Bolivia. It's designed for developers and businesses that need access to geographic, statistical, and cultural information about the country." />
+                <EmojiText text="I'm a passionate web developer :computer: with a strong interest in JavaScript ecosystem technologies. My main focus is on creating dynamic and efficient web experiences using the most modern tools. :rocket:" />
               </p>
               <div className={styles.techSection}>
                 <h2 className={styles.techTitle}>
-                  <EmojiText text="Main Features :sparkles:" />
+                  <EmojiText text="My favorite technologies :heart:" />
                 </h2>
                 <ul className={styles.techList}>
                   <li>
-                    <EmojiText text="Accurate geographic data :world_map:" />
+                    <EmojiText text="JavaScript (JS) :yellow_heart:" />
                   </li>
                   <li>
-                    <EmojiText text="Up-to-date information :calendar:" />
+                    <EmojiText text="Node.js :green_heart:" />
                   </li>
                   <li>
-                    <EmojiText text="Access through REST endpoints :gear:" />
+                    <EmojiText text="Express :fast_forward:" />
                   </li>
                   <li>
-                    <EmojiText text="Clear and detailed documentation :book:" />
+                    <EmojiText text="React :atom_symbol:" />
+                  </li>
+                  <li>
+                    <EmojiText text="HTML :page_facing_up:" />
+                  </li>
+                  <li>
+                    <EmojiText text="CSS :art:" />
                   </li>
                 </ul>
               </div>
-              <p className={styles.developer}>
-                <EmojiText text="This project was developed by Josue Mancilla, a Full Stack Developer passionate about creating modern web solutions. :computer:" />
-              </p>
               <div className={styles.githubLink}>
                 <a
                   href="https://github.com/jujomago"
@@ -55,7 +59,7 @@ const About = () => {
                   rel="noopener noreferrer"
                   className={styles.button}
                 >
-                  <EmojiText text="Check out my GitHub" />
+                  <EmojiText text="Visit my GitHub" />
                 </a>
               </div>
             </div>
