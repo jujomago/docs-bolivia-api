@@ -9,7 +9,8 @@ import { themes as prismThemes } from "prism-react-renderer";
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Bolivia Places API",
-  tagline: "The best API for turistic places in Boliva",
+  tagline:
+    "Explore comprehensive data on Bolivian geography, cities, and places, with easy API integration for developers.",
   url: "https://jujomago.github.io",
   baseUrl: "/",
   onBrokenLinks: "throw",

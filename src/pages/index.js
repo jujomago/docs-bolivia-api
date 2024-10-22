@@ -5,8 +5,7 @@ import parse from "html-react-parser";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import styles from "./index.module.css";
 import HomepageFeatures from "../components/HomepageFeatures";
-
-import { API_URL } from "../utils/contantes";
+import Head from "@docusaurus/Head";
 import JsonView from "react18-json-view";
 import "react18-json-view/src/style.css";
 import ImageViewer from "../components/imageViewer";
@@ -157,6 +156,9 @@ export default function Home() {
       description={siteConfig.tagline}
       keywords={["api", "bolivia", "geography"]}
     >
+      <Head>
+        <meta property="og:image" content="/img/logo.png" />
+      </Head>
       <HomepageHeader />
       {
         <main>
