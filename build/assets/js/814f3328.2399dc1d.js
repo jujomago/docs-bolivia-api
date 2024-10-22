@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_bolivia_api=self.webpackChunkdocs_bolivia_api||[]).push([[7472],{55513:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"MDX Blog Post","permalink":"/blog/mdx-blog-post","unlisted":false,"date":"2023-08-01T00:00:00.000Z"}]}')}}]);

@@ -61,14 +61,6 @@ const ImageViewer = ({ images }) => {
           style={{ width: "100%", height: "100%" }}
         />
       </dialog>
-      <style jsx>{`
-        dialog::backdrop {
-          background: rgb(41 4 4 / 57%);
-        }
-        dialog {
-          border: none;
-        }
-      `}</style>
     </div>
   );
 };

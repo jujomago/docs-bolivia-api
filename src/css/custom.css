@@ -52,6 +52,12 @@ html[data-theme="dark"] .docusaurus-highlight-code-line {
   align-items: flex-start;
   gap: 20px;
 }
+@media screen and (max-width: 1180px) {
+  .resultado_grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .codeSection {
   display: flex;
   flex-direction: column;
@@ -69,6 +75,9 @@ html[data-theme="dark"] .docusaurus-highlight-code-line {
   background-color: #486c5c;
   border-radius: 6px;
   box-shadow: 0 0 10px rgba(86, 85, 85, 0.96);
+}
+[data-theme="dark"] .searchBox__url {
+  color: #fff;
 }
 .searchBox input {
   width: 80px;

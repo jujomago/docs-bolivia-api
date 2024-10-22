@@ -9,3 +9,10 @@
   height: 200px;
   width: 200px;
 }
+
+dialog::backdrop {
+  background: rgb(41 4 4 / 57%);
+}
+dialog {
+  border: none;
+}

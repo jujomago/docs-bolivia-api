@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_bolivia_api=self.webpackChunkdocs_bolivia_api||[]).push([[8121],{68070:a=>{a.exports=JSON.parse('{"tags":[{"label":"new_place","permalink":"/blog/tags/new-place","count":1}]}')}}]);

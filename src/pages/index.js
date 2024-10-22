@@ -16,10 +16,10 @@ function HomepageHeader() {
 
   const { API_URL } = siteConfig.customFields;
 
-  const [searchVal, setSearchVal] = useState(null);
+  const [searchVal, setSearchVal] = useState("");
   const [jsonPlace, setJsonObject] = useState(null);
   const [images, setImages] = useState([]);
-  const [initialSearch, setInitialSearch] = useState(true); // Estado para controlar la búsqueda inicial
+  const [initialSearch, setInitialSearch] = useState(true);
 
   useEffect(() => {
     fetch(`${API_URL}/places/ids`)
@@ -34,7 +34,7 @@ function HomepageHeader() {
   useEffect(() => {
     if (searchVal && initialSearch) {
       handleSearch();
-      setInitialSearch(false); // Desactiva la búsqueda automática después de la primera vez
+      setInitialSearch(false);
     }
   }, [searchVal, initialSearch]);
 
@@ -64,17 +64,15 @@ function HomepageHeader() {
         <section className="resultado_grid">
           <div className="codeSection">
             <div className="searchBox">
-              <div>{CLEAN_API_URL}/places/</div>
+              <div className="searchBox__url">{CLEAN_API_URL}/places/</div>
               <input
                 type="text"
                 value={searchVal}
                 onChange={(e) => {
-                  console.log("change");
                   setSearchVal(e.target.value);
                 }}
                 onKeyUp={(e) => {
                   if (e.key === "Enter") {
-                    console.log("Enter pressed:", searchVal);
                     handleSearch();
                   }
                 }}
@@ -155,7 +153,10 @@ function HomepageHeader() {
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
   return (
-    <Layout description={siteConfig.tagline}>
+    <Layout
+      description={siteConfig.tagline}
+      keywords={["api", "bolivia", "geography"]}
+    >
       <HomepageHeader />
       {
         <main>
