@@ -37,9 +37,10 @@ html[data-theme="dark"] .docusaurus-highlight-code-line {
   display: flex;
   align-items: center;
   padding: 15px;
-  &:last-child {
-    border: 0;
-  }
+}
+
+.navbar__item:last-child {
+  border: 0;
 }
 
 /* .jv-indent .json-view--pair:nth-child(odd){
@@ -118,9 +119,9 @@ html[data-theme="dark"] .docusaurus-highlight-code-line {
 .cardPlaceh2 {
   margin-bottom: 28px;
   margin-top: 6px;
-  &:first-letter {
-    text-transform: uppercase;
-  }
+}
+.cardPlaceh2:first-letter {
+  text-transform: uppercase;
 }
 .cardPlace .description {
   text-align: justify;
@@ -203,15 +204,13 @@ html[data-theme="dark"] .docusaurus-highlight-code-line {
 .code {
   overflow: auto;
   height: 570px;
-  > .json-view {
-    min-height: 100%;
-    padding: 10px 15px;
-    background-color: #ffffffb8;
-    transition: all 0.5s ease;
-  }
 }
-.code--show {
-  > .json-view {
-    background: white;
-  }
+.code > .json-view {
+  min-height: 100%;
+  padding: 10px 15px;
+  background-color: #ffffffb8;
+  transition: all 0.5s ease;
+}
+.code--show > .json-view {
+  background: white;
 }

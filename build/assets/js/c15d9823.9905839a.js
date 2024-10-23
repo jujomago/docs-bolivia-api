@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_bolivia_api=self.webpackChunkdocs_bolivia_api||[]).push([[8146],{29328:a=>{a.exports=JSON.parse('{"metadata":{"permalink":"/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);

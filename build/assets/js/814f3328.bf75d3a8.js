@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_bolivia_api=self.webpackChunkdocs_bolivia_api||[]).push([[7472],{55513:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Officially launched!","permalink":"/blog/officially-launched","unlisted":false,"date":"2024-10-22T00:00:00.000Z"}]}')}}]);

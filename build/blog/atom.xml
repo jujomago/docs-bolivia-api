@@ -2,11 +2,32 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://jujomago.github.io/blog</id>
     <title>Bolivia Places API Blog</title>
-    <updated>2024-10-22T00:00:00.000Z</updated>
+    <updated>2024-10-23T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://jujomago.github.io/blog"/>
     <subtitle>Bolivia Places API Blog</subtitle>
     <icon>https://jujomago.github.io/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[🎉 Added New Places! 🌍]]></title>
+        <id>https://jujomago.github.io/blog/new-places</id>
+        <link href="https://jujomago.github.io/blog/new-places"/>
+        <updated>2024-10-23T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[We are excited to announce that two new places have been added to our platform:]]></summary>
+        <content type="html"><![CDATA[<p>We are excited to announce that two new places have been added to our platform:</p>
+<p><strong>New Places Added:</strong><br>
+<!-- -->📍 <strong>Represa Lago San Jacinto</strong><br>
+<!-- -->🏛️ <strong>Museo Nacional Paleontológico Arqueológico</strong></p>
+<p>These places are now part of the database and can be explored by users.</p>
+<p>Furthermore, starting today, the homepage will display random places 🎲 to enhance user experience, giving a fresh look every time someone visits! 🖼️</p>
+<p>Stay tuned for more updates! 🚀</p>]]></content>
+        <author>
+            <name>Josue Mancilla</name>
+            <uri>https://github.com/jujomago</uri>
+        </author>
+        <category label="tarija" term="tarija"/>
+        <category label="new_places" term="new_places"/>
+        <category label="new_feature" term="new_feature"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Officially launched!]]></title>
         <id>https://jujomago.github.io/blog/officially-launched</id>

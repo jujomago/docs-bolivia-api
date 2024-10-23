@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_bolivia_api=self.webpackChunkdocs_bolivia_api||[]).push([[8121],{68070:e=>{e.exports=JSON.parse('{"tags":[{"label":"announcement","permalink":"/blog/tags/announcement","count":1},{"label":"new_feature","permalink":"/blog/tags/new-feature","count":1}]}')}}]);
