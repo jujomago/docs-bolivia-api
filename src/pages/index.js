@@ -124,13 +124,13 @@ function HomepageHeader() {
                     </a>
                   )}
 
-                  {jsonPlace.location.length > 30 && (
+                  {jsonPlace.location?.length > 30 && (
                     <p className="locationDir">
                       <b>Location: </b> <br />
                       {parse(jsonPlace.location)}
                     </p>
                   )}
-                  {(jsonPlace.description.length > 30 ||
+                  {(jsonPlace.description?.length > 30 ||
                     jsonPlace.description_html.length > 30) && (
                     <p className="description">
                       <b>Detail: </b> <br />
